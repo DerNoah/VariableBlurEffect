@@ -8,7 +8,9 @@
 import UIKit
 import VariableBlurEffectObjc
 
-public class UIVariableBlurEffectView: UIView {
+public typealias UIVariableBlurEffectView = CompiledVariableBlurEffectView
+
+private class VariableBlurEffectView: UIView {
     private let imageView = UIImageView()
     
     public override init(frame: CGRect) {
