@@ -13,7 +13,7 @@ public class CompiledVariableBlurEffectView: UIVisualEffectView {
     private let maxBlurRadius: CGFloat
     private let filterType: String
     
-    init(
+    public init(
         gradientMask: UIImage = CompiledVariableBlurEffectViewConstants.defaultGradientMask,
         maxBlurRadius: CGFloat = 20,
         filterType: String = "variableBlur"
