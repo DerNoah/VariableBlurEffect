@@ -8,20 +8,20 @@
 import UIKit
 import VariableBlurEffectObjc
 
-class UIVariableBlurEffectView: UIView {
+public class UIVariableBlurEffectView: UIView {
     private let imageView = UIImageView()
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
     }
     
-    override func draw(_ rect: CGRect) {
+    public override func draw(_ rect: CGRect) {
         super.draw(rect)
         imageView.frame = frame
     }
