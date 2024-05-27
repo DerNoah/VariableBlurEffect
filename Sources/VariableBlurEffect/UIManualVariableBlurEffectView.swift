@@ -1,20 +1,21 @@
 //
 //  UIManualVariableBlurEffectView.swift
-//  
+//
 //
 //  Created by Noah Plützer on 27.05.24.
 //
 
 import Combine
 import UIKit
+import VariableBlurEffectObjc
 
-class UIManualVariableBlurEffectView: UIView {
+public class UIManualVariableBlurEffectView: UIView {
     private let imageView = UIImageView()
     private lazy var displaylink = CADisplayLink(target: self, selector: #selector(displaylinkStep(_:)))
     
-    weak var renderSource: UIView?
+    public weak var renderSource: UIView?
     
-    var updatesManually: Bool = false {
+    public var updatesManually: Bool = false {
         didSet {
             if updatesManually {
                 displaylink.isPaused = true
@@ -25,12 +26,12 @@ class UIManualVariableBlurEffectView: UIView {
         }
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
     }
@@ -42,14 +43,14 @@ class UIManualVariableBlurEffectView: UIView {
         setNeedsDisplay()
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         
         imageView.frame = frame
         update()
     }
     
-    func update() {
+    public func update() {
         guard updatesManually else { return }
         
         updateBlurImage()
@@ -61,7 +62,7 @@ class UIManualVariableBlurEffectView: UIView {
     }
     
     private func updateBlurImage() {
-        guard let inputImage = renderSourceAsImage() ?? renderWholeScreenContextAsImage() else { return }
+        guard let inputImage = renderSourceAsImage() ?? renderAsImage() else { return }
             
         let bluredImage = applyMaskedVariableBlur(image: inputImage)
             
