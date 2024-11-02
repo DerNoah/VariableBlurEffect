@@ -10,11 +10,8 @@ import SwiftUI
 public typealias VariableBlurViewController = ProgressiveBlurViewController
 
 public class ProgressiveBlurViewController: UIHostingController<ProgressiveBlur> {
-	public convenience init(
-		radius: Double = 10,
-		effect: UIBlurEffect? = UIBlurEffect(style: .systemUltraThinMaterial)
-	) {
-		self.init(rootView: ProgressiveBlur(radius: radius, effect: effect))
+	public convenience init() {
+		self.init(rootView: ProgressiveBlur())
 	}
 	
 	public override func viewDidLoad() {

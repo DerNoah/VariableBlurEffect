@@ -11,17 +11,9 @@ public typealias VariableBlurView = ProgressiveBlurView
 
 public class ProgressiveBlurView: UIView {
 	public var viewController: ProgressiveBlurViewController? = nil
-	public var radius: Double = 10
-	public var effect: UIBlurEffect? = nil
 	public var blurInsets: UIEdgeInsets = .zero
 	
-	public init(
-		radius: Double = 10,
-		effect: UIBlurEffect? = UIBlurEffect(style: .systemUltraThinMaterial),
-		blurInsets: UIEdgeInsets = .zero
-	) {
-		self.radius = radius
-		self.effect = effect
+	public init(blurInsets: UIEdgeInsets = .zero) {
 		self.blurInsets = blurInsets
 		super.init(frame: .zero)
 		setup()
@@ -33,7 +25,7 @@ public class ProgressiveBlurView: UIView {
 	}
 	
 	private func setup() {
-		let viewController = ProgressiveBlurViewController(rootView: ProgressiveBlur(radius: radius, effect: effect))
+		let viewController = ProgressiveBlurViewController(rootView: ProgressiveBlur())
 		self.viewController = viewController
 		
 		addSubview(viewController.view)

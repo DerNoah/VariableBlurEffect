@@ -8,8 +8,8 @@
 import UIKit
 
 final class CustomBlurView: UIVisualEffectView {
-	init(effect: UIBlurEffect? = UIBlurEffect(style: .systemUltraThinMaterial)) {
-		super.init(effect: effect)
+	init() {
+		super.init(effect: UIBlurEffect(style: .systemUltraThinMaterial))
 		
 		removeAllFilters()
 		
