@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+public typealias VariableBlurViewController = ProgressiveBlurViewController
+
 public class ProgressiveBlurViewController: UIHostingController<ProgressiveBlur> {
 	public convenience init(
 		radius: Double = 10,

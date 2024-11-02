@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+public typealias VariableBlur = ProgressiveBlur
+
 public struct ProgressiveBlur: View {
 	private let radius: Double
 	private let effect: UIBlurEffect?

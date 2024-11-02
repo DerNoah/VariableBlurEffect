@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+public typealias VariableBlurView = ProgressiveBlurView
+
 public class ProgressiveBlurView: UIView {
 	public var viewController: ProgressiveBlurViewController? = nil
 	public var radius: Double = 10
