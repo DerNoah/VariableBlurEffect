@@ -8,10 +8,10 @@
 import SwiftUI
 
 public struct ProgressiveBlur: View {
-	let radius: Double
-	let effect: UIBlurEffect?
+	private let radius: Double
+	private let effect: UIBlurEffect?
 	
-	init(
+	public init(
 		radius: Double = 10,
 		effect: UIBlurEffect? = UIBlurEffect(style: .systemUltraThinMaterial)
 	) {
